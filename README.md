@@ -27,6 +27,3 @@ The analysis is based on a public healthcare dataset containing anonymized patie
 
 ## Expected Outcomes
 This analysis aims to highlight distinct patient profiles and explore their relationship with hospital readmission patterns, providing insights that could support data-driven decision-making in healthcare contexts.
-
-## Project Status
-This project is currently in progress.
