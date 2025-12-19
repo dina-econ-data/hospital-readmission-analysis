@@ -1,0 +1,23 @@
+---
+title: "Hospital Readmission Analysis"
+author: "Dina"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## Introduction
+
+This analysis explores patient profiles associated with hospital readmission using multivariate statistical methods.
+
+## Data description
+
+(To be completed.)
+
+## Data preprocessing
+
+```{r}
+# Load required packages
+library(tidyverse)
+library(FactoMineR)
+library(factoextra)
+
