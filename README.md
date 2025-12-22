@@ -64,9 +64,7 @@ The k-means clustering applied to the retained PCA components (k = 4) reveals fo
 
 These clusters highlight meaningful heterogeneity in patient profiles and support the identification of high-risk groups for targeted healthcare interventions.
 
-## Clustering Results 
-
-## Clustering and interpretation
+## Results and interpretation
 
 Based on the retained PCA components, a k-means clustering (k = 4) was performed to identify patient profiles.
 
