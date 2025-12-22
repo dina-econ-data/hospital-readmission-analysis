@@ -37,5 +37,5 @@ Two standard criteria were used to determine the number of components to retain:
 - **Kaiser criterion** (eigenvalues > 1), which suggests retaining **5 principal components**.
 - **Cumulative explained variance criterion**, according to which approximately **9 components** are required to explain around **80% of the total variance**.
 
-Both criteria were considered in order to balance interpretability and information retention. The final number of components used in subsequent analyses depends on the trade-off between dimensionality reduction and explanatory power.
+Although a higher number of components would explain more variance, **we retained 5 principal components** according to the Kaiser criterion in order to **maximize interpretability** and achieve an **effective dimensionality reduction**.”
 
