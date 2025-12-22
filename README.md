@@ -66,6 +66,27 @@ These clusters highlight meaningful heterogeneity in patient profiles and suppor
 
 ## Clustering Results 
 
-Clustering was performed using k-means (k = 4) on the first five PCA components. 
-The clusters show a clear structure in the PCA space and represent distinct patient profiles, 
-notably in terms of hospital stay duration, medical procedures, and treatment intensity.
+## Clustering and interpretation
+
+Based on the retained PCA components, a k-means clustering (k = 4) was performed to identify patient profiles.
+
+The clusters were interpreted using the mean values of the original numerical variables for each group.
+
+- **Cluster 1 – Standard hospitalization patients**: patients with moderate length of stay and average medical resource usage.
+- **Cluster 2 – Acute care patients**: patients frequently admitted through emergency services, with short but intensive hospital stays.
+- **Cluster 3 – Low-severity patients**: patients with low medical complexity, few procedures, and short hospitalizations.
+- **Cluster 4 – Complex patients**: patients characterized by long hospital stays, high medication use, and multiple procedures.
+
+These profiles highlight heterogeneity in patient trajectories and may be relevant for understanding hospital readmission patterns.
+
+## Conclusion
+
+This project applied multivariate statistical methods to explore hospital readmission data.
+
+Principal Component Analysis (PCA) was first used to reduce dimensionality while preserving most of the information contained in the original variables. The retained components captured key aspects of hospital utilization and patient severity.
+
+Subsequently, k-means clustering on the PCA coordinates allowed the identification of distinct patient profiles, ranging from low-severity cases to complex patients requiring intensive care.
+
+The results highlight meaningful heterogeneity among hospitalized patients and suggest that patient complexity and intensity of care may play an important role in readmission patterns. These findings illustrate the usefulness of exploratory multivariate methods for healthcare data analysis and decision support.
+
+
