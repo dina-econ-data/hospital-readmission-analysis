@@ -43,4 +43,4 @@ In line with standard academic practice and interpretability considerations, **5
 - **First Principal Component** captures the intensity and severity of hospital care, with high contributions from variables such as the number of medications, laboratory procedures, diagnoses, and length of hospital stay. This dimension reflects overall medical complexity and treatment burden.
 - **Second Principal Component** represents differences in healthcare utilization patterns, distinguishing patients with frequent emergency or inpatient visits from those with more outpatient-based care.
 
-_These principal components provide an interpretable low-dimensional representation of patient profiles and serve as a robust basis for subsequent clustering analyses_
+_These principal components provide an interpretable low-dimensional representation of patient profiles and serve as a robust basis for subsequent clustering analyses._
