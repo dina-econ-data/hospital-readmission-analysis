@@ -14,8 +14,7 @@ The analysis is based on a public healthcare dataset containing anonymized patie
 ## Methodology
 - Data cleaning and preprocessing  
 - Exploratory data analysis  
-- Principal Component Analysis (PCA)  
-- Hierarchical clustering (CAH)  
+- Principal Component Analysis (PCA)   
 - k-means clustering  
 
 ## Tools
