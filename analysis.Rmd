@@ -2,6 +2,7 @@
 title: "Hospital Readmission Analysis"
 author: "Dina"
 date: "22 dec.2025"
+output: html_document
 ---
 
 ##Introduction
