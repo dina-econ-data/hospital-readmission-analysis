@@ -45,3 +45,13 @@ encounter ID, patient number, and discharge disposition.
 These variables are well represented on the second axis, as confirmed by their cos² values.
 
 _The retained principal components are used as input for hierarchical clustering (CAH) and k-means clustering to identify patient profiles associated with hospital readmission patterns._
+
+## Clustering (k-means)
+
+After reducing the dimensionality of the dataset using PCA (5 retained components),
+k-means clustering was applied on the individuals coordinates in the PCA space.
+
+A partition into **4 clusters** was selected, based on interpretability and stability
+considerations.
+
+The resulting clusters are well balanced and reveal distinct patient profiles.
