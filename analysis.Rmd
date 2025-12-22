@@ -1,23 +1,119 @@
 ---
 title: "Hospital Readmission Analysis"
 author: "Dina"
-date: "`r Sys.Date()`"
-output: html_document
+date: "22 dec.2025"
 ---
 
-## Introduction
+##Introduction
 
-This analysis explores patient profiles associated with hospital readmission using multivariate statistical methods.
+This project explores patient profiles associated with hospital readmission using multivariate statistical methods.  
+The objective is to identify homogeneous patient groups and interpret the main factors associated with readmission risk.
 
-## Data description
+##Data description
 
-(To be completed.)
+- Source: Kaggle 
+- Number of observations: 101,766
+- Number of variables: 50
+- Description of key variables:
 
-## Data preprocessing
+The dataset includes a wide range of variables describing patient hospitalizations.  
+For the purposes of this analysis, particular attention is given to the following numerical variables:
+
+-time_in_hospital: number of days the patient stayed in the hospital.
+-num_lab_procedures: number of laboratory tests performed during the hospital stay.
+-num_procedures: number of medical procedures carried out.
+-num_medications: number of distinct medications administered.
+-number_diagnoses: number of diagnoses recorded for the patient.
+-number_emergency: number of emergency room visits prior to the hospitalization.
+-number_inpatient: number of previous inpatient visits.
+-number_outpatient: number of outpatient visits prior to admission.
+
+These variables capture the intensity of medical care, patient complexity, and healthcare utilization patterns, which are key factors for understanding hospital readmission risk.
+
+
+##Data preprocessing
 
 ```{r}
-# Load required packages
+#Load required packages
 library(tidyverse)
 library(FactoMineR)
 library(factoextra)
+
+#Load dataset
+data <- read_csv("diabetic_data.csv")
+View(data)
+glimpse(data)
+
+#Data cleaning
+data_clean <- data%>%
+  mutate(across(where(is.character),~na_if(.,"?")))
+colSums(is.na(data_clean))
+
+data_reduced <- data_clean %>%
+  select(-weight, -payer_code, -medical_specialty)
+View(data_reduced)
+```
+
+
+##Principal Component Analysis (PCA)
+
+```{r}
+#keep only numeric variables for PCA
+data_numeric <- data_reduced %>%
+  select(where(is.numeric))
+dim(data_numeric) #13 variables // 101766 observations
+
+pca_res <- PCA(data_numeric, scale.unit = TRUE, graph = FALSE)
+summary(pca_res)
+pca_res$eig #eigenvalues
+
+round(pca_res$var$contrib[,1:5], 3) #contribution values (5 principal components)
+round(pca_res$var$coord, 3) #Coordinates of variables 
+round(pca_res$var$cos2, 3)
+
+```
+
+
+##Clustering 
+
+```{r}
+#Coordinates of individuals on the retained PCA components (5 components)
+ind_coord <- pca_res$ind$coord[, 1:5]
+
+#k-means
+set.seed(123)
+km <- kmeans(ind_coord, centers = 4, nstart = 25)
+table(km$cluster)
+
+data_clustered <- data_reduced
+data_clustered$cluster <- factor(km$cluster)
+table(data_clustered$cluster)
+
+num_cols <- sapply(data_clustered, is.numeric)
+data_for_agg <- data_clustered[, c("cluster", names(data_clustered)[num_cols])]
+
+cluster_means <- aggregate(. ~ cluster, data = data_for_agg, mean)
+cluster_means
+
+View(cluster_means)
+```
+
+
+
+
+```{r}
+#PCA coordinates (Dim.1 & Dim.2)
+pca_ind <- as.data.frame(pca_res$ind$coord[, 1:2])
+pca_ind$cluster <- factor(km$cluster)
+
+#plot
+plot(pca_ind$Dim.1, pca_ind$Dim.2, col = pca_ind$cluster,
+  pch = 19, xlab = "Dim.1", ylab = "Dim.2",
+  main = "Individuals projected on the first two PCA components")
+
+legend("topright", legend = levels(pca_ind$cluster), 
+  col = 1:length(levels(pca_ind$cluster)), pch = 19)
+
+```
+
 
