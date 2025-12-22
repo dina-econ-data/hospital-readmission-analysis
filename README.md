@@ -23,14 +23,13 @@ The analysis is based on a public healthcare dataset containing anonymized patie
 - RStudio  
 - R Markdown  
 - FactoMineR  
-- factoextra  
 
 ## Expected Outcomes
 This analysis aims to highlight distinct patient profiles and explore their relationship with hospital readmission patterns, providing insights that could support data-driven decision-making in healthcare contexts.
 
 ## PCA Results
 
-Principal Component Analysis (PCA) was applied to the numeric variables of the dataset after data cleaning and preprocessing.
+A PCA was applied to the numeric variables of the dataset (13 variables, 101,766 observations) after data cleaning and standardization.
 
 Two standard criteria were used to determine the number of components to retain:
 
@@ -40,7 +39,9 @@ Two standard criteria were used to determine the number of components to retain:
 In line with standard academic practice and interpretability considerations, **5 principal components were retained**.
 
 **Interpretation of the first components**
-- **First Principal Component** captures the intensity and severity of hospital care, with high contributions from variables such as the number of medications, laboratory procedures, diagnoses, and length of hospital stay. This dimension reflects overall medical complexity and treatment burden.
-- **Second Principal Component** represents differences in healthcare utilization patterns, distinguishing patients with frequent emergency or inpatient visits from those with more outpatient-based care.
+- **First Principal Component** captures the intensity and severity of hospital care, with high contributions from variables such as the number of medications, time in hospital, lab procedures, and number of diagnoses. These variables show high contributions and strong coordinates on the first axis, indicating that PC1 captures the overall intensity of medical care.
+- **Second Principal Component** is associated with patient administrative and admission characteristics, including
+encounter ID, patient number, and discharge disposition.
+These variables are well represented on the second axis, as confirmed by their cos² values.
 
-_These principal components provide an interpretable low-dimensional representation of patient profiles and serve as a robust basis for subsequent clustering analyses._
+_The retained principal components are used as input for hierarchical clustering (CAH) and k-means clustering to identify patient profiles associated with hospital readmission patterns._
