@@ -37,5 +37,9 @@ Two standard criteria were used to determine the number of components to retain:
 - **Kaiser criterion** (eigenvalues > 1), which suggests retaining **5 principal components**.
 - **Cumulative explained variance criterion**, according to which approximately **9 components** are required to explain around **80% of the total variance**.
 
-Although a higher number of components would explain more variance, **we retained 5 principal components** according to the Kaiser criterion in order to **maximize interpretability** and achieve an **effective dimensionality reduction**.”
+In line with standard academic practice and interpretability considerations, **5 principal components were retained**.
+
+**Interpretation of the first components**
+- **First Principal Component** captures the intensity and severity of hospital care, with high contributions from variables such as the number of medications, laboratory procedures, diagnoses, and length of hospital stay. This dimension reflects overall medical complexity and treatment burden.
+- **Second Principal Component** represents differences in healthcare utilization patterns, distinguishing patients with frequent emergency or inpatient visits from those with more outpatient-based care.
 
