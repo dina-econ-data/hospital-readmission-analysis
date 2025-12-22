@@ -27,3 +27,15 @@ The analysis is based on a public healthcare dataset containing anonymized patie
 
 ## Expected Outcomes
 This analysis aims to highlight distinct patient profiles and explore their relationship with hospital readmission patterns, providing insights that could support data-driven decision-making in healthcare contexts.
+
+## PCA Results
+
+Principal Component Analysis (PCA) was applied to the numeric variables of the dataset after data cleaning and preprocessing.
+
+Two standard criteria were used to determine the number of components to retain:
+
+- **Kaiser criterion** (eigenvalues > 1), which suggests retaining **5 principal components**.
+- **Cumulative explained variance criterion**, according to which approximately **9 components** are required to explain around **80% of the total variance**.
+
+Both criteria were considered in order to balance interpretability and information retention. The final number of components used in subsequent analyses depends on the trade-off between dimensionality reduction and explanatory power.
+
