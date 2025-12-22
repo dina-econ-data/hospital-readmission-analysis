@@ -87,6 +87,6 @@ Principal Component Analysis (PCA) was first used to reduce dimensionality while
 
 Subsequently, k-means clustering on the PCA coordinates allowed the identification of distinct patient profiles, ranging from low-severity cases to complex patients requiring intensive care.
 
-The results highlight meaningful heterogeneity among hospitalized patients and suggest that patient complexity and intensity of care may play an important role in readmission patterns. These findings illustrate the usefulness of exploratory multivariate methods for healthcare data analysis and decision support.
+This analysis highlights the existence of distinct patient profiles with different levels of healthcare utilization. The results suggest that patients with higher medical complexity and longer hospital stays are more likely to be associated with readmission risk.
 
 
