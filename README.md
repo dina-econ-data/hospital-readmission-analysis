@@ -63,3 +63,9 @@ The k-means clustering applied to the retained PCA components (k = 4) reveals fo
 - **Cluster 4** includes high-complexity patients with long hospital stays, high medication intake, frequent procedures, and multiple diagnoses, indicating a higher risk of hospital readmission.
 
 These clusters highlight meaningful heterogeneity in patient profiles and support the identification of high-risk groups for targeted healthcare interventions.
+
+## Clustering Results 
+
+Clustering was performed using k-means (k = 4) on the first five PCA components. 
+The clusters show a clear structure in the PCA space and represent distinct patient profiles, 
+notably in terms of hospital stay duration, medical procedures, and treatment intensity.
