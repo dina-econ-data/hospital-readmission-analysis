@@ -54,3 +54,12 @@ A partition into **4 clusters** was selected, based on interpretability and stab
 considerations.
 
 The resulting clusters are well balanced and reveal distinct patient profiles.
+
+The k-means clustering applied to the retained PCA components (k = 4) reveals four distinct patient profiles:
+
+- **Cluster 1** corresponds to patients with moderate hospital stays and medication use, suggesting stable chronic conditions with regular follow-up.
+- **Cluster 2** groups low-severity patients characterized by short hospital stays, few procedures, and minimal use of healthcare resources.
+- **Cluster 3** represents intermediate cases with moderate levels of hospitalization, procedures, and diagnoses.
+- **Cluster 4** includes high-complexity patients with long hospital stays, high medication intake, frequent procedures, and multiple diagnoses, indicating a higher risk of hospital readmission.
+
+These clusters highlight meaningful heterogeneity in patient profiles and support the identification of high-risk groups for targeted healthcare interventions.
